@@ -9,9 +9,9 @@ import java.util.List;
 
 public class Chapter {
 
-    int number;
-    String name;
-    List<Article> articleList;
+    private int number;
+    private String name;
+    private List<Article> articleList;
 
     public Chapter(List<Article> articleList, int number, String name){
 
@@ -25,7 +25,6 @@ public class Chapter {
     public String toString(){
 
         return name;
-
 
     }
 
@@ -44,7 +43,5 @@ public class Chapter {
         return articleList;
 
     }
-
-
 
 }

@@ -1,5 +1,6 @@
 package com.constitution;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,18 +12,36 @@ public class Constitution {
     List<Chapter> chapterList;
     List<Article> articleList;
 
-    public List<Article> getArticles(int beginning, int end){
+    public Constitution(List<Chapter> chL, List<Article> artL){
 
-        List<Article> rangeOfArticles = new LinkedList<Article>();
+        this.chapterList = chL;
+        this.articleList = artL;
 
-        return rangeOfArticles;
+    }
+
+    public List<Article> getRangeOfArticles(int beginning, int end){
+
+        List<Article> subArray = new ArrayList<Article>();
+
+        for(int i = beginning-1; i<= end-1; i++){
+
+            subArray.add(articleList.get(i));
+
+        }
+
+        return subArray;
+
+    }
+
+    public Article getArticle(int number){
+
+        return articleList.get(number-1);
 
     }
 
     public Chapter getChapter(int number){
 
-        Chapter chapterFromList = null;
-        return chapterFromList;
+        return chapterList.get(number-1);
 
     }
 
