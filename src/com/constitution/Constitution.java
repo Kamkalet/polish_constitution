@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class Constitution {
 
-    List<Chapter> chapterList;
-    List<Article> articleList;
+   private List<Chapter> chapterList;
+    private List<Article> articleList;
 
     public Constitution(List<Chapter> chL, List<Article> artL){
 

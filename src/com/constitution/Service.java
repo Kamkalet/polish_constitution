@@ -7,7 +7,7 @@ import java.util.List;
  */
 public class Service {
 
-    Constitution polishConstitution;
+    private Constitution polishConstitution;
 
     public Service(Constitution a){
 
@@ -15,28 +15,31 @@ public class Service {
 
     }
 
-    public void parse(String args[]){
+    public void parse(String args[]) throws IllegalArgumentException {
 
         if(args[1].equals("R")){
 
+            int number = Integer.parseInt(args[2]);
+            if((number < 1) || (number > 13)) throw new IllegalArgumentException();
             System.out.println(polishConstitution.getChapter(Integer.parseInt(args[2])));
+
 
         }
         else if(args[1].equals("A")){
 
             if(!args[2].contains("-")){
 
-                System.out.println(polishConstitution.getArticle(Integer.parseInt(args[2])));
+                int number = Integer.parseInt(args[2]);
+                if((number < 0) || (number > 243)) throw new IllegalArgumentException();
+                System.out.println(polishConstitution.getArticle(number));
 
             }
             else{
 
+
                 String firstNumber = args[2].substring(0, args[2].indexOf("-"));
                 String secondNumber = args[2].substring(args[2].indexOf("-")+1, args[2].length());
 
-
-                System.out.println(firstNumber);
-                System.out.println(secondNumber);
                 List<Article> list = polishConstitution.
                         getRangeOfArticles(Integer.parseInt(firstNumber),Integer.parseInt(secondNumber));
                 for(Article a : list){
@@ -46,6 +49,11 @@ public class Service {
                 }
 
             }
+
+        }
+        else{
+
+            throw new IllegalArgumentException();
 
         }
 
