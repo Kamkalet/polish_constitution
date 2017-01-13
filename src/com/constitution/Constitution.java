@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by AD on 02.12.2016.
- */
 public class Constitution {
 
    private List<Chapter> chapterList;

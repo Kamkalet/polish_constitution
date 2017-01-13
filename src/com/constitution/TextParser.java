@@ -16,7 +16,6 @@ public class TextParser {
 
         try {
 
-
             FileReader fileReader = new FileReader(fileName);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
 
@@ -104,6 +103,12 @@ public class TextParser {
         catch(IOException ex){
 
             System.out.println("Blad operacji wejscia/wyjscia");
+            System.exit(1);
+
+        }
+        catch ( Exception ex){
+
+            System.out.println();
             System.exit(1);
 
         }
